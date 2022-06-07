@@ -16,14 +16,17 @@ The api service can translate normal text to rovarspraket text and a rovarsprake
 
 ## Automated Testing
 
-- After installation run command "npm run test"
+Jest with Supertest has been used for testing
+
+- If the dependencies are installed run command "npm run test"
 
 ## Documentations
 
-Documentation can be found on http://localhost:3000/api-docs/ while the service is running
+Swagger was used for documentation
+
+Documentation can be found on http://localhost:3000/api-docs/ or can be navigated from home page while the service is running
 
 ## Screenshots
-
 
 ![scr1](https://user-images.githubusercontent.com/77497219/172482225-0c72ca74-72c7-4207-94bf-ad3c0965b1e1.PNG)
 ![scr2](https://user-images.githubusercontent.com/77497219/172482256-f2bb4ee3-77cb-406c-b5d6-c6249132ffba.PNG)

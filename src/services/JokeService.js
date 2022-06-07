@@ -4,7 +4,7 @@ const config = require('../config/config');
 
 let jokeService = {
 
-    // Returns a random joke
+    // Retrieve a random joke from the API
     getRandomJoke: async () => {
         let response;
         try {

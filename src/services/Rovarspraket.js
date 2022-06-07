@@ -5,7 +5,7 @@ const specialCharacters = ['-', '.', ',', '!', '?', ':', ';', ' ', '/', '\n', '\
 const Rovarspraket = {
 
     // Translate a string to rovarspraket
-    normal: function(str, jokeOftheDay = false) {
+    normal: function(str) {
 
         if(!str || typeof str !== 'string' || str.length === 0) {
             throw new BadRequestError('No string provided');
@@ -27,7 +27,7 @@ const Rovarspraket = {
         return result;
     },
 
-    // Translate a string to rovarspraket
+    // Translate a string from rovarspraket
     rovarspraket: function(str) {
 
         if(!str || typeof str !== 'string' || str.length === 0) {
