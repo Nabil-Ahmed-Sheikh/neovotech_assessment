@@ -1,6 +1,6 @@
 const { BadRequestError } = require('../errors');
 const vowels = ['a', 'e', 'i', 'o', 'u'];
-const specialCharacters = ['-', '.', ',', '!', '?', ':', ';', ' ', '/', '\n', '\\', '"'];
+const specialCharacters = ['-', '.', ',', '!', '?', ':', ';', ' ', '/', '\n', '\\', '"', '\''];
 
 const Rovarspraket = {
 
