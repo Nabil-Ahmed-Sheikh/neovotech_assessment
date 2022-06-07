@@ -15,11 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.set("view engine", "ejs");
+
 app.get('/', (req, res) => {
-    return res.status(200).json({
-        success: true,
-        message: 'Welcome to the Translate API'
-    });
+    return res.render('index');
 });
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
