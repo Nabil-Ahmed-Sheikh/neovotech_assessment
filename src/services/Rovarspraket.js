@@ -6,6 +6,10 @@ const Rovarspraket = {
 
     // Translate a string to rovarspraket
     normal: function(str, jokeOftheDay = false) {
+
+        if(!str || typeof str !== 'string' || str.length === 0) {
+            throw new BadRequestError('No string provided');
+        }
         
         let result = '';
 
@@ -25,6 +29,10 @@ const Rovarspraket = {
 
     // Translate a string to rovarspraket
     rovarspraket: function(str) {
+
+        if(!str || typeof str !== 'string' || str.length === 0) {
+            throw new BadRequestError('No string provided');
+        }
 
         let result = '';
 
