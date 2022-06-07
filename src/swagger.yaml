@@ -1,4 +1,4 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
   title: Neovotech Programming Task
   description: This is the documentation for Roversparket translator task by Neovotech
@@ -7,15 +7,15 @@ info:
     email: nabil.ahmednsu@gmail.com
   license:
     name: Apache 2.0
-    url: "http://apache.org/"
+    url: 'http://apache.org/'
   servers:
-    -url: "http://localhost:3000/"
+    -url: 'http://localhost:3000/'
     description: This is the local server
 
 schemes: [http, https]
 
 paths:
-#Translate text to rovarsparket
+  #Translate text to rovarsparket
   /translate/normal:
     post:
       summary: Translate text to rovarsparket
@@ -25,13 +25,13 @@ paths:
       consumes:
         - application/json
       parameters:
-      - in: body
-        name: text
-        schema:
-          type: object
-          properties:
-            text:
-              type: string
+        - in: body
+          name: text
+          schema:
+            type: object
+            properties:
+              text:
+                type: string
       responses:
         200:
           description: Success
@@ -47,23 +47,22 @@ paths:
         400:
           description: Bad Request
           schema:
-            $ref: "#/components/schemas/error"
+            $ref: '#/components/schemas/error'
         500:
           description: Internal Server Error
           schema:
-            $ref: "#/components/schemas/error"
+            $ref: '#/components/schemas/error'
 
-
-#Translate roversparket string to text
+  #Translate roversparket string to text
   /translate/rovarspraket:
-      post:
-        summary: Translate rovarsparket to normal text
-        description: Translates a given rovarsparket string to a normal text and returns it
-        produces:
-          - application/json
-        consumes:
-          - application/json
-        parameters:
+    post:
+      summary: Translate rovarsparket to normal text
+      description: Translates a given rovarsparket string to a normal text and returns it
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
         - in: body
           name: text
           schema:
@@ -71,55 +70,54 @@ paths:
             properties:
               text:
                 type: string
-        responses:
-          200:
-            description: Success
-            schema:
-              type: object
-              properties:
-                success:
-                  type: boolean
-                message:
-                  type: string
-                joke:
-                  type: string
-                translation:
-                  type: string
-          400:
-            description: Bad Request
-            schema:
-              $ref: "#/components/schemas/error"
-          500:
-            description: Internal Server Error
-            schema:
-              $ref: "#/components/schemas/error"
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              joke:
+                type: string
+              translation:
+                type: string
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/components/schemas/error'
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: '#/components/schemas/error'
 
-#Translate roversparket string to text
+  #Fetch joke from api then translate string to rovarsparket then return the joke with rovarsparket
   /translate/translateJokeOfTheDay:
-      post:
-        summary: Fetch Joke of the day and translate to rovarsparket and send both text and translation
-        description: Translates a given text to rovarsparket string and returns it
-        responses:
-          200:
-            description: Success
-            schema:
-              type: object
-              properties:
-                success:
-                  type: boolean
-                message:
-                  type: string
-                translation:
-                  type: string
-          400:
-            description: Bad Request
-            schema:
-              $ref: "#/components/schemas/error"
-          500:
-            description: Internal Server Error
-            schema:
-              $ref: "#/components/schemas/error"
-
+    post:
+      summary: Fetch Joke of the day and translate to rovarsparket and send both text and translation
+      description: Translates a given text to rovarsparket string and returns it
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              translation:
+                type: string
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/components/schemas/error'
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: '#/components/schemas/error'
 
 components:
   schemas:
@@ -132,4 +130,3 @@ components:
           type: string
         message:
           type: string
-

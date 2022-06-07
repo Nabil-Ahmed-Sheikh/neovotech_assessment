@@ -3,7 +3,7 @@ const request = require('supertest');
 const app = require('../../app');
 
 
-describe("POST /translate/normal", () => {
+describe('POST /translate/normal', () => {
 
     it('success when valid text is supplied', async () => {
 
@@ -36,10 +36,10 @@ describe("POST /translate/normal", () => {
     
 });
 
-describe("POST /translate/rovarspraket", () => {
+describe('POST /translate/rovarspraket', () => {
 
     it('success when valid text is supplied', async () => {
-        //USER
+        
         const response = await request(app)
             .post('/translate/rovarspraket')
             .send({
@@ -79,10 +79,10 @@ describe("POST /translate/rovarspraket", () => {
     
 });
 
-describe("POST /translate/translateJokeOfTheDay", () => {
+describe('POST /translate/translateJokeOfTheDay', () => {
 
     it('success against a valid request', async () => {
-        //USER
+        
         await request(app)
             .post('/translate/translateJokeOfTheDay')
             .expect(200);

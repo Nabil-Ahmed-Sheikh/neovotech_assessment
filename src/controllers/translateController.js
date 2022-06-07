@@ -16,7 +16,7 @@ const translate = {
         
     },
 
-    // Translate a string to rovarspraket
+    // Translate a string from rovarspraket
     rovarspraket: (req, res) => {
 
         let translation = Rovarspraket.rovarspraket(req.body.text);
@@ -29,7 +29,7 @@ const translate = {
         
     },
 
-    // Translate a string to rovarspraket
+    // Fetch a joke from external api then translate string to rovarspraket
     translateJokeOfTheDay: async (req, res) => {
         let joke = await JokeService.getRandomJoke();
 
