@@ -17,20 +17,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.set('views', path.join(__dirname, '/views'));
-app.set("view engine", "ejs");
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    return res.render(__dirname + '/views/index');
+  return res.render(__dirname + '/views/index');
 });
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use('/translate', translate);
 
-
 app.all('*', (req, res) => {
-    throw new NotFoundError();
+  throw new NotFoundError();
 });
 
 app.use(errorHandler);
 
-module.exports =  app ;
+module.exports = app;
